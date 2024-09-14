@@ -50,12 +50,15 @@ git 中的分支機制，最主要的目的就是用來解決開發過程中版�
 1. 檔案中出現 .git 資料夾，顯示此檔案已被 git 追蹤。
 2. .git 資料夾內部有六個檔案
 
-| config      | 
-| descrption      | 
-| HEAD      | 
-| hooks     | 
-| objects      | 
-| refs      | 
+
+| File Name  | Status |
+| ------------- |:-------------:|
+| config        |           new |
+| descrption    |           new |
+| HEAD          |           new |
+| hooks         |           new |
+| objects       |           new |
+| refs          |           new |
 
 
 
