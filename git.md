@@ -62,10 +62,10 @@ git 中的分支機制，最主要的目的就是用來解決開發過程中版�
 
 
 
-### mkdir 在工作目錄建立檔案
+### mkdir 在工作目錄建立檔案    
 無變化
 
-### add 把檔案從工作目錄加到暫存區
+### add 把檔案從工作目錄加到暫存區    
 1. 新增 Index
 2. Objects 資料夾：如果內部檔案有改動則出現紀錄      
 
@@ -80,7 +80,7 @@ git 中的分支機制，最主要的目的就是用來解決開發過程中版�
 | Index         |           new |
 
 
-### commit提交暫存區的檔案到儲存庫
+### commit提交暫存區的檔案到儲存庫    
 1. Index變更
 2. Objects > 出現紀錄
 3. 新增 logs 檔案
@@ -101,8 +101,8 @@ git 中的分支機制，最主要的目的就是用來解決開發過程中版�
 | COMMIT_EDITMSG   |       new |
 
 
-### amend 修改最近一個 commit 的訊息
-1. Objects > 出現紀錄
+### amend 修改最近一個 commit 的訊息     
+1. Objects > 出現紀錄    
 2.COMMIT_EDITMSG變更      
 
 | File Name  | Status |
@@ -116,3 +116,126 @@ git 中的分支機制，最主要的目的就是用來解決開發過程中版�
 | Index         |     unchanged |
 | Logs          |     unchanged |
 | COMMIT_EDITMSG   |      changed |
+
+
+### 在工作目錄改動檔案     
+1. Index > 紀錄更動   
+
+| File Name  | Status |
+| ------------- |:-------------:|
+| Index         |       changed |
+
+
+### restore --staged從暫存區域回到工作目錄     
+1. Index > 紀錄更動      
+
+| File Name  | Status |
+| ------------- |:-------------:|
+| Index         |       changed |
+
+
+### restore 捨棄在工作目錄的改變(包括修改與刪除)    
+1. Index變更    
+2. 被修改的檔案退回上次 commit 狀態  
+
+| File Name  | Status |
+| ------------- |:-------------:|
+| Index         |       changed |
+
+
+### commit -am 同時 add 跟 commit     
+1. Objects > 發生變動   
+2. COMMIT_EDITMSG > 發生變動   
+3. Index > 發生變動   
+
+| File Name  | Status |
+| ------------- |:-------------:|
+| Index         |       changed |
+| COMMIT_EDITMSG   |      changed |
+| objects       |       changed |
+  
+
+### rm --cached從 git 暫存區中移除，但是檔案還在工作目錄   
+1. Index > 紀錄更動     
+
+| File Name  | Status |
+| ------------- |:-------------:|
+| Index         |       changed |
+
+
+
+### 從 git 工作目錄完全移除    
+1. Index > 紀錄更動     
+
+| File Name  | Status |
+| ------------- |:-------------:|
+| Index         |       changed |
+
+
+### branch新增分支
+無改變
+
+
+### switch切換分支   
+1. HEAD > 發生變動
+2. Index > 發生變動
+
+| File Name  | Status |
+| ------------- |:-------------:|
+| Index         |       changed |
+| HEAD         |       changed |
+
+
+### merge 合併分支  
+1.新增 ORIG_HEAD    
+註：branch不會消失    
+
+| File Name  | Status |
+| ------------- |:-------------:|
+| config        |     unchanged |
+| descrption    |     unchanged |
+| HEAD          |     unchanged |
+| hooks         |     unchanged |
+| objects       |     unchanged |
+| refs          |     unchanged |
+| Index         |     unchanged |
+| Logs          |     unchanged |
+| COMMIT_EDITMSG   |  unchanged |
+| ORIG_HEAD    |       new |
+
+### Delete branch刪除本地分支
+1. config > 發生變動
+2.新增 packed-refs 
+
+| File Name  | Status |
+| ------------- |:-------------:|
+| config        |       changed |
+| descrption    |     unchanged |
+| HEAD          |     unchanged |
+| hooks         |     unchanged |
+| objects       |     unchanged |
+| refs          |     unchanged |
+| Index         |     unchanged |
+| Logs          |     unchanged |
+| COMMIT_EDITMSG   |  unchanged |
+| ORIG_HEAD    |       unchanged  |
+| packed-refs    |       new  |
+
+
+### 修改分支名稱
+1. config > 發生變動     
+2. HEAD發生變動   
+
+| File Name  | Status |
+| ------------- |:-------------:|
+| config        |       changed |
+| descrption    |     unchanged |
+| HEAD          |       changed |
+| hooks         |     unchanged |
+| objects       |     unchanged |
+| refs          |     unchanged |
+| Index         |     unchanged |
+| Logs          |     unchanged |
+| COMMIT_EDITMSG   |  unchanged |
+| ORIG_HEAD    |       unchanged  |
+| packed-refs    |     unchanged  |
