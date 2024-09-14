@@ -102,7 +102,7 @@ git 中的分支機制，最主要的目的就是用來解決開發過程中版�
 
 
 ### amend 修改最近一個 commit 的訊息     
-1. Objects > 出現紀錄    
+1. Objects > 出現紀錄      
 2.COMMIT_EDITMSG變更      
 
 | File Name  | Status |
@@ -239,3 +239,33 @@ git 中的分支機制，最主要的目的就是用來解決開發過程中版�
 | COMMIT_EDITMSG   |  unchanged |
 | ORIG_HEAD    |       unchanged  |
 | packed-refs    |     unchanged  |
+
+
+# commit message style
+分為三大部分  
+*Type：Subject  
+*Body   
+*Footer  
+
+| 類型  | 說明 |
+| ------------- |:-------------:|
+| Feat  |    新功能  |
+|  Modify |    既有功能需求調整的修改  |
+|  Fix |    錯誤修正  |
+| Docs |    更新文件  |
+| Style |   "程式碼格式調整，不影響程式碼運行，如：white-space, formatting。"  |
+|  Refactor |    重構，針對已上線的功能程式碼調整與優化，且不改變既有邏輯。  |
+|  Test|   測試，如：新增測試、重構測試等 |
+|  Chore|   更新專案建置設定、更新版本號等瑣事。  |
+|  Revert|   撤銷之前的commit。 |
+
+## Subject 主旨
+不應超過50個字元，若用英文書寫則需大寫開頭，中英文都不用句號結尾。
+盡量以祈使句書寫，言簡意賅的簡述此Commit的改動。
+
+## Body 本文
+非必須，撰寫本文時務必將修改項目與原因寫清楚。
+每行不超過72個字。
+
+## Footer頁尾
+非必須，通常用來標註對應的 issue 編號。
