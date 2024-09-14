@@ -33,8 +33,7 @@ git 中的分支機制，最主要的目的就是用來解決開發過程中版�
 
 
 ### - HEAD
-一個指標，指向某一個分支，可以把 HEAD 當做目前所在分支看待，   
-通常建立分支以後 .git 中才會出現 HEAD 檔案。
+一個指標，指向某一個分支，可以把 HEAD 當做目前所在分支看待。
 
 
 ### - Tag
@@ -63,4 +62,40 @@ git 中的分支機制，最主要的目的就是用來解決開發過程中版�
 
 
 
-###
+### mkdir 在工作目錄建立檔案
+無變化
+
+### add 把檔案從工作目錄加到暫存區
+1. 新增 Index
+2. Objects 資料夾：如果內部檔案有改動則出現紀錄      
+
+| File Name  | Status |
+| ------------- |:-------------:|
+| config        |     unchanged |
+| descrption    |     unchanged |
+| HEAD          |     unchanged |
+| hooks         |     unchanged |
+| objects       |       changed |
+| refs          |     unchanged |
+| Index         |           new |
+
+
+### commit提交暫存區的檔案到儲存庫
+1. Index變更
+2. Objects > 出現紀錄
+3. 新增 logs 檔案
+4. logs  >新增HEAD
+5. logs > 新增refs >heads >main
+6. 新增COMMIT_EDITMSG    
+
+| File Name  | Status |
+| ------------- |:-------------:|
+| config        |     unchanged |
+| descrption    |     unchanged |
+| HEAD          |     unchanged |
+| hooks         |     unchanged |
+| objects       |       changed |
+| refs          |     unchanged |
+| Index         |       changed |
+| Logs         |       changed |
+| COMMIT_EDITMSG   |       changed |
