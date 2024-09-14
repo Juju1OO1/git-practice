@@ -104,15 +104,15 @@ git 中的分支機制，最主要的目的就是用來解決開發過程中版�
 ### amend 修改最近一個 commit 的訊息
 1. Objects > 出現紀錄
 2.COMMIT_EDITMSG變更      
-    
+
 | File Name  | Status |
-| -------------- |:--------------:|
-| config         |      unchanged |
-| descrption     |      unchanged |
-| HEAD           |      unchanged |
-| hooks          |      unchanged |
-| objects        |        changed |
-| refs           |      unchanged |
-| Index          |      unchanged |
-| Logs           |       unchanged|
-| COMMIT_EDITMSG |         changed|
+| ------------- |:-------------:|
+| config        |     unchanged |
+| descrption    |     unchanged |
+| HEAD          |     unchanged |
+| hooks         |     unchanged |
+| objects       |       changed |
+| refs          |     unchanged |
+| Index         |     unchanged |
+| Logs          |     unchanged |
+| COMMIT_EDITMSG   |      changed |
