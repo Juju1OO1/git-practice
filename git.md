@@ -281,7 +281,6 @@ Ans:刪除.git
 現在 Github 已不支援帳號登入，可用 SSH 連線授權   
 
 1. 先產生 SSH  key    
-
 $ ssh-keygen -t ed25519 -C "your_email@example.com    
 
 2. 產生以後至 /Users/UserName/.ssh/id_ed25519.pub 複製全部內容，     
@@ -289,7 +288,7 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com
 將 id_ed25519.pub 內容貼到 keys 
 
 
-3. 將 SSH key 加到 SSH agent
-$ eval "$(ssh-agent -s)"
-$ ssh-add ~/.ssh/id_ed25519
+3. 將 SSH key 加到 SSH agent   
+$ eval "$(ssh-agent -s)"   
+$ ssh-add ~/.ssh/id_ed25519    
 
