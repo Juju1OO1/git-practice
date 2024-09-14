@@ -2,4 +2,11 @@
 
 ## 名詞解釋
 
-### * Blob(Binary large object)
+### - Blob  
+又稱為Binary large object，一種物件類型，    
+每當新增一個檔案到暫存區（add）的時候會有一個 blob 物件產生，    
+這個物件會紀錄檔案的內容，但不會紀錄檔名，
+這些 Blob 紀錄的路徑為 .git/Objects/
+此路徑下的目錄為兩位數字元，由於檔案內容是以 sha-1 雜湊演算法儲存，
+因此取前兩碼作為目錄內容。
+
