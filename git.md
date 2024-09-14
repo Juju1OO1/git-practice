@@ -2,4 +2,4 @@
 
 ## 名詞解釋
 
-### *Blob(Binary large object)
+### * Blob(Binary large object)
