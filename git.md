@@ -278,6 +278,7 @@ Ans:刪除.git
 或輸入command  $ rm -rf .git
 
 ## 建立 GitHub repo 之授權問題
+
 現在 Github 已不支援帳號登入，可用 SSH 連線授權   
 
 1. 先產生 SSH  key    
@@ -291,4 +292,20 @@ $ ssh-keygen -t ed25519 -C "your_email@example.com
 3. 將 SSH key 加到 SSH agent   
 $ eval "$(ssh-agent -s)"   
 $ ssh-add ~/.ssh/id_ed25519    
+
+
+## .gitignore 之生效問題
+
+發現 repo 中有檔案 .DS_Store     
+為 mac OS之 finder 目錄檔案，不建議 push 到 repo 上    
+但檔案已在第一次 push 時被追蹤，將其加入 .gitignore 再 push 也不起作用
+
+1. 就算檔案在 .gitignore 中，如果先前已經被納入版本管理，在 local 就會有緩存，就算加入 ignore 也沒用    
+2. 要先清除 local 緩存再提交
+$ git rm -r --catched .  
+3. 再將檔案（除 ignore 以外的）加回來
+$ git add .
+4.最後 commit &push 即可
+
+
 
