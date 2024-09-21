@@ -304,7 +304,7 @@ $ ssh-add ~/.ssh/id_ed25519
 2. 要先清除 local 緩存再提交     
 $ git rm -r --catched .     
 3. 再將檔案（除 ignore 以外的）加回來     
-$ git add .     
+$ git add .       
 4.最後 commit &push 即可     
 
 
