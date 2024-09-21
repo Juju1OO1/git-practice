@@ -1,0 +1,26 @@
+{
+  "name": "git-practice",
+  "version": "1.0.0",
+  "description": "git-practice",
+  "main": "index.js",
+  "type": "module" ,
+  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juju1OO1/git-practice.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "package"
+  ],
+  "author": "Juju1OO1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juju1OO1/git-practice/issues"
+  },
+  "homepage": "https://github.com/Juju1OO1/git-practice#readme"
+}

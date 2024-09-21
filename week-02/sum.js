@@ -24,3 +24,5 @@ function sum2 (ary){
 }
 
 console.log(sum2([1, 5, 3, 2])); // 11
+
+
