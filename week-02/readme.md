@@ -18,8 +18,8 @@
 
 
 |  套件  | nvm  |  npm |
-| :----: | :----: | :----: |
+| :---- | :---- | :---- |
 | 說明 | （Node Version Manager）想要切換到不同版本的 Node.js 的話就需要使用 NVM ，需要額外安裝| （Node Package Manager）是 Node.js 內的套件管理工具，不需要另外下載安裝，完成 Node.js 的安裝後就可以直接下指令使用 |
 | 常用 | 1. 安裝特定版本 NodeJS             $nvm install 18           | 1. 初始化專案             $npm init            |
-|  | 2.  切換到特定版本 NodeJS           $nvm use 18 | 2.安裝套件           $npm install bootstrap    |
-|   | 3. 顯示有哪些版本可用     $nvm list    | 3. 移除套件      $npm uninstall fontawesome|
+ | 2.  切換到特定版本 NodeJS           $nvm use 18 | 2.安裝套件           $npm install bootstrap    |
+ | 3. 顯示有哪些版本可用     $nvm list    | 3. 移除套件      $npm uninstall fontawesome|
