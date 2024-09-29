@@ -9,7 +9,8 @@
 
 **LTS** 狀態代表「長期支援」，在 30 個月內發現的重大錯誤通常都會得到修復，而本次安裝的 v18.20.4 目前處於 LTS 且 Maintenance 持續至 2025 年 4 月（參下圖），是目前較新且穩定的版本。
 
-![NodeJS近期版本](../assets/week-02/img/"NodeJS-version")     
+![NodeJS近期版本](../assets/week-02/img/"NodeJS-version")    
+ 
 圖片來源：https://github.com/nodejs/release?tab=readme-ov-file#release-schedule
 
 
