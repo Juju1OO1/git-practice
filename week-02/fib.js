@@ -6,7 +6,7 @@ function fib(n){
     
     if(n==0){
     //第0個 fibonacci 數為 0 ，直接輸出 0
-        console.log(F_last);
+        return(F_last);
     }else{
     //將 F_last,F_pre 相加求出下一個 fibonacci 數存入 F_next
     //再將 F_last,F_pre 各往後移一個 fibonacci 數
@@ -16,7 +16,7 @@ function fib(n){
             F_last = F_pre;
             F_pre = F_next;
         };
-        console.log(F_pre);
+        return (F_pre);
     }
 }
 
