@@ -57,12 +57,19 @@
 + AZ 代碼為其 Region 代碼後續跟著一個字母識別符，例如：us-east-1a。          
 + 啟動執行元件時需進行以下設定：選取區域和虛擬私有雲 (VPC) => 從其中一個 AZ 選取子網路。
 + 如果執行元件分散至多個 AZ，但其中一個執行個體故障，則可以預先設計組態，讓其他 AZ 內的執行元件來處理要求；或者用彈性 IP 地址快速將地址重新映射到另一個可用區域中的執行元件。
-+ 下圖說明多個可用區域   
++ 下圖說明多個可用區域     
+可用區域 A 和可用區域 B 各有一個子網，每個子網都有執行元件。
+可用區域 C **沒有子網，因此無法在此可用區域中啟動執行元件**。
 
 ![AZ 說明](../assets/week-03/img/region-with-azs.png)        
  
 圖片來源：https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/using-regions-availability-zones.html
         
-可用區域 A 和可用區域 B 各有一個子網，每個子網都有執行元件。
-可用區域 C **沒有子網，因此無法在此可用區域中啟動執行元件**。
+### AZ ID    
++ 以 ID 來區分同一個 Region 下的 AZ，ID 相同不一定代表實體位置一樣，這是為了確保資源分散運用，如下圖：  
+
+![AZ ID說明](../assets/week-03/img/AZ-ID_explain.png)        
+ 
+圖片來源：https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/using-regions-availability-zones.html   
+
 
