@@ -12,7 +12,7 @@
 | us-east-1      | US East (N. Virginia)         | Not required  |
 | us-east-2      | US East (Ohio)                | Not required  |
 | us-west-1      | US West (N. California)       | Not required  |
-| us-west-2      | US West (Oregon)              | Not required  |
+<!-- | us-west-2      | US West (Oregon)              | Not required  |
 | af-south-1     | Africa (Cape Town)            | Required      |
 | ap-east-1      | Asia Pacific (Hong Kong)      | Required      |
 | ap-south-2     | Asia Pacific (Hyderabad)      | Required      |
@@ -40,7 +40,7 @@
 | il-central-1   | Israel (Tel Aviv)             | Required      |
 | me-south-1     | Middle East (Bahrain)         | Required      |
 | me-central-1   | Middle East (UAE)             | Required      |
-| sa-east-1      | South America (São Paulo)     | Not required  |
+| sa-east-1      | South America (São Paulo)     | Not required  | -->
   
 
 
