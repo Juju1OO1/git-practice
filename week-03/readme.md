@@ -6,7 +6,7 @@
 + 檢視資源時只會看到自己區域的資源，而且不會自動跨區域複寫資源。        
 + 啟動專案時必須選取 AMI 位於相同區域中的專案，如果 AMI 位於另一個區域中，可以將 AMI 其複製到自己的區域。        
 （補充：Amazon 機器映像 (AMI) 是提供設定和啟動 Amazon EC2 專案所需軟體的映像檔，每個AMI包含一個區塊裝置對應，指定要連接至您啟動的專案的區塊裝置，必須在啟動執行個體AMI時指定；一個 AMI 包含以下屬性：地區、作業系統、處理器架構、 root 設備類型、虛擬化類型。）             
-+ 下表為 AWS 各區域之代碼及手動啟用狀況          
++ 下表為 AWS 各區域之代碼及手動啟用狀況            
 | Code           | Name                         | Opt-in status |
 | :------------- | :--------------------------- | :------------ |
 | us-east-1      | US East (N. Virginia)         | Not required  |
@@ -41,7 +41,7 @@
 | me-south-1     | Middle East (Bahrain)         | Required      |
 | me-central-1   | Middle East (UAE)             | Required      |
 | sa-east-1      | South America (São Paulo)     | Not required  |
-
+  
 
 
 <!-- </div> -->
