@@ -70,6 +70,46 @@
 
 ![AZ ID說明](../assets/week-03/img/AZ-ID_explain.png)        
  
-圖片來源：https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/using-regions-availability-zones.html   
+圖片來源：https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/using-regions-availability-zones.html        
+
++ AZ ID 列表       
+
+| Region                       | Availability Zones                                 |
+| :--------------------------- | :------------------------------------------------ |
+| 美國東部 (維吉尼亞北部)         | use1-az1, use1-az2, use1-az3, use1-az4, use1-az5, use1-az6 |
+| 美國東部 (俄亥俄)              | use2-az1, use2-az2, use2-az3                       |
+| 美國西部 (加利佛尼亞北部)       | usw1-az1, usw1-az2, usw1-az3†                       |
+| 美國西部 (奧勒岡)              | usw2-az1, usw2-az2, usw2-az3, usw2-az4              |
+| 非洲 (開普敦)                  | afs1-az1, afs1-az2, afs1-az3                        |
+| 亞太區域 (香港)                | ape1-az1, ape1-az2, ape1-az3                        |
+| 亞太區域 (海德拉巴)            | aps2-az1, aps2-az2, aps2-az3                        |
+| 亞太區域 (雅加達)              | apse3-az1, apse3-az2, apse3-az3                     |
+| 亞太區域 (馬來西亞)            | apse5-az1, apse5-az2, apse5-az3                     |
+| 亞太區域 (墨爾本)              | apse4-az1, apse4-az2, apse4-az3                     |
+| 亞太區域 (孟買)                | aps1-az1, aps1-az2, aps1-az3                        |
+| 亞太區域 (大阪)                | apne3-az1, apne3-az2, apne3-az3                     |
+| 亞太區域 (首爾)                | apne2-az1, apne2-az2, apne2-az3, apne2-az4          |
+| 亞太區域 (新加坡)              | apse1-az1, apse1-az2, apse1-az3                     |
+| 亞太區域 (雪梨)                | apse2-az1, apse2-az2, apse2-az3                     |
+| 亞太區域 (東京)                | apne1-az1, apne1-az2, apne1-az3, apne1-az4          |
+| 加拿大（中部）                  | cac1-az1, cac1-az2, cac1-az4                        |
+| 加拿大西部 (卡加利)            | caw1-az1, caw1-az2, caw1-az3                        |
+| 歐洲 (法蘭克福)                | euc1-az1, euc1-az2, euc1-az3                        |
+| 歐洲 (愛爾蘭)                  | euw1-az1, euw1-az2, euw1-az3                        |
+| 歐洲 (倫敦)                    | euw2-az1, euw2-az2, euw2-az3                        |
+| 歐洲 (米蘭)                    | eus1-az1, eus1-az2, eus1-az3                        |
+| 歐洲 (巴黎)                    | euw3-az1, euw3-az2, euw3-az3                        |
+| 歐洲 (西班牙)                  | eus2-az1, eus2-az2, eus2-az3                        |
+| 歐洲 (斯德哥爾摩)              | eun1-az1, eun1-az2, eun1-az3                        |
+| 歐洲 (蘇黎世)                  | euc2-az1, euc2-az2, euc2-az3                        |
+| 以色列（特拉維夫）              | ilc1-az1, ilc1-az2, ilc1-az3                        |
+| 中東（巴林）                    | mes1-az1, mes1-az2, mes1-az3                        |
+| 中東 (UAE)                     | mec1-az1, mec1-az2, mec1-az3                        |
+| 南美洲（聖保羅）                | sae1-az1, sae1-az2, sae1-az3                        |
+| AWS GovCloud (美國東部)        | usge1-az1, usge1-az2, usge1-az3                      |
+| AWS GovCloud (美國西部)        | usgw1-az1, usgw1-az2, usgw1-az3                      |
+
+
+
 
 
