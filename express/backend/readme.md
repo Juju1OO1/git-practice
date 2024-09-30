@@ -79,11 +79,12 @@ kill -9 <PID>
 ## require 與 import/export、 CJS vs ESM，這兩者分別怎麼用？     
 兩者比較如下：      
 
-|類別|CJS|ESM|
-|:-----|:-----|
-|說明|CommonJS 的模組系統，被廣泛用於前端開發，使用 require 來導入模組，並使用 module.exports 或 exports 導出|ECMAScript 的模組系統，從 ES6 開始引入，使用 import 和 export 來導入和導出模組|
-|import 時機|動態（執行時 import）|靜態（編譯時即 import）|
-|導入模組|var fn = require('./package.js');|import { fn } from './package.js';|
-|導出模組|exports.fn = function(n) {};|export function f(n) {}|
+| 類別         | CJS                                                 | ESM                                               |
+|--------------|----------------------------------------------------|--------------------------------------------------|
+| 說明         | CommonJS 的模組系統，被廣泛用於前端開發，使用 `require` 來導入模組，並使用 `module.exports` 或 `exports` 導出。 | ECMAScript 的模組系統，從 ES6 開始引入，使用 `import` 和 `export` 來導入和導出模組。 |
+| import 時機  | 動態（執行時 import）                              | 靜態（編譯時即 import）                          |
+| 導入模組    | `var fn = require('./package.js');`               | `import { fn } from './package.js';`            |
+| 導出模組    | `exports.fn = function(n) {};`                    | `export function f(n) {}`                        |
+
 
 資料來源：https://vocus.cc/article/649cc0e0fd89780001a7d34d
