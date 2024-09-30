@@ -68,11 +68,11 @@ kill -9 <PID>
 以下表說明
 |檔案名稱|功能描述|是否要放上 repo|
 |:-----|:-----|:-----|
-|app.js|||
+|app.js|主要的 js 檔案，通常是專案起點或用於啟動 server|是|
 |node_modules|express 框架下的套件，及透過 npm install 安裝的套件存放的地方，內部檔案不能更動，資料夾名稱也是固定的|否|
-|package.json|||
-|package-lock.json|||
-|readme.json|||
+|package.json|記載專案資訊如名稱、版本、套件等，在進行專案時常常需要編輯或比對|是|
+|package-lock.json|記錄當前安裝的精確版本，確保同一專案在不同的環境中安裝 Dependencies 時，能得到完全相同版本的套件，安裝時常常需要被比對|是|
+|readme.json|對專案的描述、介紹，或維持專案不為空，有更動就要 更新|是|
 
 
 ，因為內部都是開源套件，因此會在.gitignore加上 node_modules/ 避免沒必要的檔案紀錄在git裡，
