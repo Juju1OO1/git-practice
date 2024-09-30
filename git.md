@@ -302,7 +302,7 @@ $ ssh-add ~/.ssh/id_ed25519
 
 1. 就算檔案在 .gitignore 中，如果先前已經被納入版本管理，在 local 就會有緩存，就算加入 ignore 也沒用      
 2. 要先清除 local 緩存再提交     
-$ git rm -r --catched .     
+$ git rm -r --cached .     
 3. 再將檔案（除 ignore 以外的）加回來     
 $ git add .       
 4.最後 commit &push 即可     
