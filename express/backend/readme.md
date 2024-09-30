@@ -1,4 +1,26 @@
 ## Dependencies 與 DevDependencies
+Dependencies 與 DevDependencies 內都是 npm 安裝的 package，由 terminal 下指令安裝而產生，唯一區別是 Dependencies 內放的是在**執行環境**時也需要的 package，而 DevDependencies 放的是只有在**開發環境**才需要的 package         
+而套件案的安裝可以透過指令控制：       
+
+1. 安裝在 Dependencies（執行環境，如 React 等框架）：      
+
+```
+npm install <package_name>
+```   
+
+```
+npm install --save <package_name>
+```   
+2. 安裝在 DevDependencies（開發環境）：
+
+```
+npm install <package_name> --save-dev
+```
+```
+npm install --only=dev
+```
+
+
 ## package.json 中的 scripts 這個區塊怎麼用？
 ## Port number 要怎麼以環境變數來設定？      
 
