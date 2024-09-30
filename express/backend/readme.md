@@ -12,9 +12,24 @@ const port = process.env.PORT || 3000;
 在 terminal 中輸入想要使用的 port 號碼（如：8080）     
 ```  
 PORT=8080 node app.js
-```  
+```     
 
+### 補充：Port 被佔用時的清理方法      
+1. 在 terminal 尋找要使用的 Port 被哪個 Process 佔用：   
+```      
+lsof -i :<PORT_NUMBER>
+```   
 
+2. 出現列表如下：      
+
+![佔用 Port 的 Process](../../assets/express/img/localhostScreenShot.png)       
+
+3. 以 PID kill 執行中的 Process：            
+``` 
+kill -9 <PID>
+```    
+
+4. 或在 terminal 使用 ctrl + c           
 
 
 ## 關於哪些檔案應該要被放上 github repo?
