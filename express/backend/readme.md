@@ -23,7 +23,7 @@ npm install --only=dev
 
 ## package.json 中的 scripts 這個區塊怎麼用？
 script 是命令腳本，可以在裡面自行編輯 command ，如果專案後期越來越複雜，可以善用script 讓指令長度大幅縮減，增加工作效率！     
-格式如下：     
+- 格式如下：     
 ```
 "scripts": {
         "script名稱1": "要執行的command",
@@ -64,6 +64,18 @@ kill -9 <PID>
 4. 或在 terminal 使用 ctrl + c           
 
 
-## 哪些檔案應該要被放上 github repo?
+## 哪些檔案應該要被放上 github repo?       
+以下表說明
+|檔案名稱|功能描述|是否要放上 repo|
+|:-----|:-----|:-----|
+|app.js|||
+|node_modules|express 框架下的套件，及透過 npm install 安裝的套件存放的地方，內部檔案不能更動，資料夾名稱也是固定的|否|
+|package.json|||
+|package-lock.json|||
+|readme.json|||
+
+
+，因為內部都是開源套件，因此會在.gitignore加上 node_modules/ 避免沒必要的檔案紀錄在git裡，
+
 ## require 與 import/export、 CJS vs ESM，這兩者分別怎麼用？
 ## 補充
