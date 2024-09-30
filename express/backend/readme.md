@@ -22,7 +22,7 @@ lsof -i :<PORT_NUMBER>
 
 2. 出現列表如下：      
 
-![佔用 Port 的 Process](../../assets/week-02/img/NodeJS-version.png)       
+![佔用 Port 的 Process](../../assets/express/img/localhostScreenShot.png)       
 
 3. 以 PID kill 執行中的 Process：            
 ``` 
