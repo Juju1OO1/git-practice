@@ -76,7 +76,23 @@ pm2 save
  一般指代理伺服器，允許 server 端與 client 端進行非直接的連接，Gateway、Router 等網路裝置就具備此功能； proxy 有利於保障網路終端的隱私或安全，在一定程度上能夠阻止網路攻擊。
 
 ###  透過 Nginx 來 代理 Express 專案        
-在前面有提到，Nginx 可以實現反向代理（參3. 什麼是 Nginx？有哪些用途與特性？）
+在前面有提到，Nginx 可以實現反向代理（參3. 什麼是 Nginx？有哪些用途與特性？），因此可達到下列好處：         
+
+1. Load balance: Reverse Proxy 可以分配 server 去處理請求，控制流量       
+2. Caching: 暫存加快需求處理            
+3. 彈性高：若要新增功能、需求，或是改變 port，只要將 server 端連上 proxy 即可
+
+補充：正向代理與反向代理
+- 反向代理（Reverse proxy）是 proxy 的一種，根據 client 的請求從 proxy server 上取得資源，然後再將這些資源返回給 client；而正向代理（Forward Proxy）則是作為一個中繼，將 server 資源傳給眾多 client，server不知道發請求的 client 是哪一個。        
+
+- 反向代理是在 server 端作為代理使用，而不是 client 端，client 端通過正向代理可以存取很多不同的資源，而反向代理是眾多 client 都通過它存取不同後端伺服器上的資源，而不需要知道這些後端伺服器的存在，就像所有資源都來自於這個 Reverse proxy Server，client 不知道背後服務的 server 是誰。             
+
+- 圖例
+
+![forwardProxy](../assets/week-04/img/forward-proxy.png)  
+![reverseProxy](../assets/week-04/img/reverse-proxy.png)  
+圖片來源：https://www.jyt0532.com/2019/11/18/proxy-reverse-proxy/
+
 
 ## 6. 在 readme 中提供步驟 9 的 Nginx 設定檔    
 
@@ -149,6 +165,9 @@ server {
 網址：https://tw.alphacamp.co/blog/nginx
 
 8. Nginx 是什麼？有哪些用途？           
-網址：https://www.explainthis.io/zh-hant/swe/why-nginx      
+網址：https://www.explainthis.io/zh-hant/swe/why-nginx   
+
+9. jyt0532's Blog
+網址：https://www.jyt0532.com/2019/11/18/proxy-reverse-proxy/
 
 ## 12. 過程紀錄             
