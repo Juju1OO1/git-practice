@@ -11,7 +11,7 @@ http://43.207.204.110
 | 一般用途               | 可用於各種一般工作，如 Web 伺服器和程式碼儲存庫 |  
 | 運算優化               | 適合運算密集型應用程式，如：batch、高效能 Web 伺服器、高效能運算 (HPC)、遊戲 Server |  
 | 記憶體優化             | 針對記憶體密集型工作，加速記憶體內處理大型資料集 |  
-| 加速運算               | 使用硬體加速器或協同處理器執行函數 (例如，浮點數計算、圖形處理或資料模式比對)，比在 CPU 上執行更有效率（用 GPU） |  
+| 加速運算               | 使用硬體加速器或協同處理器執行函數 （例如，浮點數計算、圖形處理或資料模式比對），比在 CPU 上執行更有效率（用 GPU） |  
 | 儲存優化               | 專為需要對本機上的 Hyperscale Data Center 進行高速且連續的讀取寫入工作設計，低延遲 |  
 | HPC 優化               | 適合大規模執行 HPC 工作，如：複雜模擬和深度學習 |  
     
@@ -19,7 +19,6 @@ http://43.207.204.110
 ###  - 如何選擇？
 1. 比較不同的 instance type 系列，確定應用程式需求
 2. 調整工作負載以選擇最佳 instance type ，評估應用程式效能、執行應用程式測試。
-
 
 ## 3. 什麼是 Nginx？有哪些用途與特性？    
 ###  - 用途說明                 
@@ -31,20 +30,17 @@ Nginx 是一款開源的網路伺服器，能夠用於多種網路服務，最�
 | 基礎性能| Nginx 特點為事件驅動架構與 non-blocking I/O，能夠更好地處理高流量 |        
 | 配置和管理| 配置文件簡潔直觀（與 Apache 相比） |        
 | 模塊和靈活性| 提供 module 功能，但必須在 compile 的時候就載入，無法動態載入|               
-| 對PHP的支援| Nginx 可以通過 FastCGI 來處理 PHP，但需自行配置 |  
-|反向代理| Client 與 Server 不需知道彼此真實位址，僅需要透過 Nginx 反向代理即可達成請求   ![反向代理](../assets/week-04/img/反向代理.png)    圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|  
-|負載均衡 |Nginx 能夠自動的將 Request 分送到不同 Server 上，而分送的演算法可以自己設計，最常使用的是 RR  ![負載均衡](../assets/week-04/img/負載平衡.png)       圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|  
-|HTTP 快取|Nginx 會利用 http 快取的機制做優化，提高效能 ![Http快取](../assets/week-04/img/Http快取.png)    圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|
-
+| 對 PHP 的支援| Nginx 可以通過 FastCGI 來處理 PHP，但需自行配置 |  
+|反向代理| Client 與 Server 不需知道彼此真實位址，僅需要透過 Nginx 反向代理即可達成請求   ![反向代理](../assets/week-04/img/反向代理。png)    圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|  
+|負載均衡 |Nginx 能夠自動的將 Request 分送到不同 Server 上，而分送的演算法可以自己設計，最常使用的是 RR  ![負載均衡](../assets/week-04/img/負載平衡。png)       圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|  
+|HTTP 快取|Nginx 會利用 http 快取的機制做優化，提高效能 ![Http 快取](../assets/week-04/img/Http 快取。png)    圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|
 
 補充：              
 事件驅動架構（EDA）: 一種軟體架構模式，其中系統的行為主要是對發生的事件做出反應，在事件驅動架構中，系統的各個元件彼此之間通過發送和接收事件來進行溝通和協作，而不是直接互相調用；事件驅動架構通常包含三個主要元件：生產者（Producer）、事件代理（Event Broker）和訂閱者（Subscriber）。             
 
-
-
 ## 4. 關於 pm2 套件  
 
-### pm2 套件是什麼?         
+### pm2 套件是什麼？
 pm2 的 pm 是 Process Manager 的意思，此套件適用在虛擬主機上，用來管理程式，pm2 可以設定 process 自動重啟、在儲存時重啟、亦或是開機自動啟動等。
 
 ### 相關指令            
@@ -68,7 +64,6 @@ pm2 startup
 將 startup 指令寫入
 ```
 sudo env PATH=$PATH:/usr/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
-
 ```
 儲存設定
 
@@ -76,12 +71,64 @@ sudo env PATH=$PATH:/usr/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup sys
 pm2 save
 ```
 
+## 5. `proxy` 相關      
+### 何謂 proxy          
+ 一般指代理伺服器，允許 server 端與 client 端進行非直接的連接，Gateway、Router 等網路裝置就具備此功能； proxy 有利於保障網路終端的隱私或安全，在一定程度上能夠阻止網路攻擊。
 
+###  透過 Nginx 來 代理 Express 專案        
+在前面有提到，Nginx 可以實現反向代理（參3. 什麼是 Nginx？有哪些用途與特性？）
 
+## 6. 在 readme 中提供步驟 9 的 Nginx 設定檔    
 
-## 5. `proxy` 相關？           
+輸入以下指令：
+```
+sudo nano /etc/nginx/sites-available/default
+```         
 
-## 6. 在 readme 中提供步驟 9 的 Nginx 設定檔            
+出現設定檔內容如下：
+```
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        # SSL configuration
+        #
+        # listen 443 ssl default_server;
+        # listen [::]:443 ssl default_server;
+        #
+        # Note: You should disable gzip for SSL traffic.
+        # See: https://bugs.debian.org/773332
+        #
+        # Read up on ssl_ciphers to ensure a secure configuration.
+        # See: https://bugs.debian.org/765782
+        #
+        # Self signed certs generated by the ssl-cert package
+        # Don't use them in a production server!
+        #
+        # include snippets/snakeoil.conf;
+
+        root /var/www/html;
+
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                proxy_pass http://localhost:3000;
+                 # Change 3000 to your Node.js port
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $host;
+                proxy_cache_bypass $http_upgrade;
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+
+```
+
 
 ## 7. Security Group 是什麼？用途為何？有什麼設定原則嗎？           
 
@@ -108,11 +155,10 @@ pm2 save
 
 6. ChatGPT
 
-7. Nginx 是什麼？認識 Web Server 與 Nginx入門教學           
+7. Nginx 是什麼？認識 Web Server 與 Nginx 入門教學           
 網址：https://tw.alphacamp.co/blog/nginx
 
 8. Nginx 是什麼？有哪些用途？           
 網址：https://www.explainthis.io/zh-hant/swe/why-nginx      
-
 
 ## 12. 過程紀錄             
