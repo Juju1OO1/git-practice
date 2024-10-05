@@ -32,9 +32,9 @@ Nginx 是一款開源的網路伺服器，能夠用於多種網路服務，最�
 | 配置和管理| 配置文件簡潔直觀（與 Apache 相比） |        
 | 模塊和靈活性| 提供 module 功能，但必須在 compile 的時候就載入，無法動態載入|               
 | 對PHP的支援| Nginx 可以通過 FastCGI 來處理 PHP，但需自行配置 |  
-|反向代理| Client 與 Server 不需知道彼此真實位址，僅需要透過 Nginx 反向代理即可達成請求   ![反向代理](../assets/week-04/img/反向代理.png)  |  
-|負載均衡 Load Balance|Nginx 能夠自動的將 Request 分送到不同 Server 上，而分送的演算法可以自己設計，最常使用的是 RR  ![負載均衡](../assets/week-04/img/負載平衡.png)  |  
-|HTTP 快取|Nginx 會利用 http 快取的機制做優化，提高效能 ![Http快取](../assets/week-04/img/Http快取.png) |
+|反向代理| Client 與 Server 不需知道彼此真實位址，僅需要透過 Nginx 反向代理即可達成請求   ![反向代理](../assets/week-04/img/反向代理.png)    圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|  
+|負載均衡 |Nginx 能夠自動的將 Request 分送到不同 Server 上，而分送的演算法可以自己設計，最常使用的是 RR  ![負載均衡](../assets/week-04/img/負載平衡.png)       圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|  
+|HTTP 快取|Nginx 會利用 http 快取的機制做優化，提高效能 ![Http快取](../assets/week-04/img/Http快取.png)    圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|
 
        
 
