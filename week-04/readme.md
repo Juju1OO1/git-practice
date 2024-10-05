@@ -21,7 +21,31 @@ http://43.207.204.110
 2. 調整工作負載以選擇最佳 instance type ，評估應用程式效能、執行應用程式測試。
 
 
-## 3. 什麼是 Nginx？有哪些用途與特性？          
+## 3. 什麼是 Nginx？有哪些用途與特性？    
+###  - 用途說明                 
+Nginx 是一款開源的網路伺服器，能夠用於多種網路服務，最主要的功能是作為網頁伺服器，處理來自網路的 HTTP 請求；也常常被使用為反向代理伺服器，提升網站的效能以及提供更高的靈活度，此外，Nginx 也能提供 load balance 的服務，以及郵件伺服器。                      
+
+###  - Nginx 特性           
+| **特性** | **說明** |  
+|------------------------|----------|  
+| 基礎性能| Nginx 特點為事件驅動架構與 non-blocking I/O，能夠更好地處理高流量 |        
+| 配置和管理| 配置文件簡潔直觀（與 Apache 相比） |        
+| 模塊和靈活性| 提供 module 功能，但必須在 compile 的時候就載入，無法動態載入|               
+| 對PHP的支援| Nginx 可以通過 FastCGI 來處理 PHP，但需自行配置 |  
+|反向代理| Client 與 Server 不需知道彼此真實位址，僅需要透過 Nginx 反向代理即可達成請求   ![反向代理](../assets/week-04/img/反向代理.png)  |  
+|負載均衡 Load Balance|Nginx 能夠自動的將 Request 分送到不同 Server 上，而分送的演算法可以自己設計，最常使用的是 RR  ![負載均衡](../assets/week-04/img/負載平衡.png)  |  
+|HTTP 快取|Nginx 會利用 http 快取的機制做優化，提高效能 ![Http快取](../assets/week-04/img/Http快取.png) |
+
+       
+
+
+
+
+補充：事件驅動架構（EDA） -- 一種軟體架構模式，其中系統的行為主要是對發生的事件做出反應，在事件驅動架構中，系統的各個元件彼此之間通過發送和接收事件來進行溝通和協作，而不是直接互相調用；事件驅動架構通常包含三個主要元件：生產者（Producer）、事件代理（Event Broker）和訂閱者（Subscriber）。             
+
+
+
+
 
 ## 4. 關於 pm2 套件         
 
@@ -52,6 +76,12 @@ http://43.207.204.110
 網址：https://lidemy5thwbc.coderbridge.io/2021/09/09/ngix/      
 
 6. ChatGPT
+
+7. Nginx 是什麼？認識 Web Server 與 Nginx入門教學           
+網址：https://tw.alphacamp.co/blog/nginx
+
+8. Nginx 是什麼？有哪些用途？           
+網址：https://www.explainthis.io/zh-hant/swe/why-nginx      
 
 
 ## 12. 過程紀錄             
