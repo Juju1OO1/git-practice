@@ -78,8 +78,8 @@ pm2 save
 ###  透過 Nginx 來 代理 Express 專案        
 在前面有提到，Nginx 可以實現反向代理（參3. 什麼是 Nginx？有哪些用途與特性？），因此可達到下列好處：         
 
-1. Load balance: Reverse Proxy 可以分配 server 去處理請求，控制流量       
-2. Caching: 暫存加快需求處理            
+1. Load balance： Reverse Proxy 可以分配 server 去處理請求，控制流量       
+2. Caching：暫存加快需求處理            
 3. 彈性高：若要新增功能、需求，或是改變 port，只要將 server 端連上 proxy 即可
 
 補充：正向代理與反向代理
@@ -136,7 +136,19 @@ server {
 ```
 
 
-## 7. Security Group 是什麼？用途為何？有什麼設定原則嗎？           
+## 7. Security Group 是什麼？用途為何？有什麼設定原則嗎？       
+### Security Group 用途         
+Security Group 主要用途是設定伺服器的連線方式，如一個虛擬防火牆，控制允許取用和離開 instance 的流量，Security Group 可以單獨設定規則如：特定 IP、port 號和 protocal 類別，設定完成後供 instance 取用。       
+
+### 相關設定原則      
+1. 只定義允許的規則：Security Group 只允許指定的流量，任何未被允許的流量都會被默認拒絕。            
+2. 默認拒絕一切流量：除非明確允許，否則所有入站出站流量都會被拒絕。               
+3. Principle of Least Privilege：只允許必要的端口和IP範圍，**避免允許0.0.0.0/0**。                      
+4. 進出流量分開設置： 應根據應用的需求設置不同的入站和出站規則。
+5. 定期審查和更新規則。         
+6. 不同使用案例的安全群組規則也不同，可參考 aws 官網            
+https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/security-group-rules-reference.html#sg-rules-web-server
+
 
 ## 8. 什麼是 sudo? 為什麼有的時候需要加上 sudo，有時候不用？ 
 安裝 pm2 的時候           
@@ -161,13 +173,17 @@ server {
 
 6. ChatGPT
 
-7. Nginx 是什麼？認識 Web Server 與 Nginx 入門教學           
+7. Nginx 是什麼？認識 Web Server 與 Nginx 入門教學                   
 網址：https://tw.alphacamp.co/blog/nginx
 
-8. Nginx 是什麼？有哪些用途？           
+8. Nginx 是什麼？有哪些用途？                
 網址：https://www.explainthis.io/zh-hant/swe/why-nginx   
 
-9. jyt0532's Blog
+9. jyt0532's Blog           
 網址：https://www.jyt0532.com/2019/11/18/proxy-reverse-proxy/
+
+10. AWS 官網            
+網址：https://docs.aws.amazon.com/zh_tw/vpc/latest/userguide/security-group-rules.html
+
 
 ## 12. 過程紀錄             
