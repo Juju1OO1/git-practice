@@ -91,11 +91,13 @@ server {
         listen 80 default_server;
         listen [::]:80 default_server;
         # 預設是 listen to port:80
+
         server_name _;
 
         location / {
                 proxy_pass http://localhost:3000;
-                # 將 port:3000 上的專案導到 proxy (Nginx 管理)上，再由 proxy # 提供給client
+                # 將 port:3000 上的專案導到 proxy (Nginx 管理)上，再由 proxy 提供給client
+
                 proxy_http_version 1.1;
                 proxy_set_header Upgrade $http_upgrade;
                 proxy_set_header Connection 'upgrade';
@@ -103,6 +105,7 @@ server {
                 proxy_cache_bypass $http_upgrade;
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
+                
                 try_files $uri $uri/ =404;
         }
 
