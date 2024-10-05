@@ -153,7 +153,41 @@ https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/security-group-rules-r
 ## 8. 什麼是 sudo? 為什麼有的時候需要加上 sudo，有時候不用？ 
 安裝 pm2 的時候           
 
-## 9. Nginx 的 Log 檔案在哪裡？你怎麼找到的？怎麼看 Nginx 的 Log？          
+## 9. Nginx 的 Log 檔案在哪裡？你怎麼找到的？怎麼看 Nginx 的 Log？      
+### Log 檔路徑  
+1. 訪問日誌             
+```
+/var/log/nginx/access.log
+```
+2. 錯誤日誌       
+```
+/var/log/nginx/error.log
+```  
+### 尋找 Log 檔路徑             
+輸入以下指令檢查 Nginx 的主配置檔：      
+```
+sudo cat /etc/nginx/nginx.conf
+```
+出現資訊：
+![nginxConf](../assets/week-04/img/nginxConf.png)    
+（由於尚未有 error 因此無 error.log）             
+
+### 查看 Log 檔路
+輸入以下指令查看：      
+```
+sudo cat /var/log/nginx/access.log
+sudo cat /var/log/nginx/error.log
+```
+出現資訊：
+![nginxLog](../assets/week-04/img/nginxLog.png)
+
+```
+35.94.217.216 - - [05/Oct/2024:09:01:50 +0000] "GET / HTTP/1.1" 200 409 
+#為訪問的 IP   - - [時間] "Method / 連線方式與version"  Http 狀態碼 回應字節數
+
+"-" "Mozilla/5.0 (Linux; U; Android 2.3.3; ko-kr; SHW-M250S Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+# 發起請求的客戶端信息（OS ,設備, broswer）
+```
 
 ## 10. 問題補充         
 
