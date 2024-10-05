@@ -17,7 +17,7 @@ function sum2 (ary){
     let total = ary.reduce (
         (accumulator, currentValue) => {
             return accumulator + currentValue;
-          },initValue );
+        },initValue );
     return total;
 }
 

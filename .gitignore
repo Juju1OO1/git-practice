@@ -56,4 +56,7 @@ Temporary Items
 ### modules for express
 node_modules
 
+### keys
+*.pem
+
 # End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode

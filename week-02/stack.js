@@ -1,6 +1,6 @@
 export default class Stack {
-    //錯誤：在export 的時候出現“Unexpected token 'export'”
-    //原因：在版本 v14.13.0 之前 NodeJS 未支援 ESM （要用 module.exports ），
+    // 錯誤：在export 的時候出現“Unexpected token 'export'”
+    // 原因：在版本 v14.13.0 之前 NodeJS 未支援 ESM （要用 module.exports ），
     // v14.13.0 以後有支援（可直接） export 但是要在 package.json 加入參數 "type":"module"
    
 	//標籤解釋
@@ -14,17 +14,17 @@ export default class Stack {
 
   // 在 stack 頂部加入元素i
   push(element) {
-        //抓取array之長度，並在其最後一個元素之後一位加入element
+        // 抓取array之長度，並在其最後一個元素之後一位加入element
         this.#items[this.#items.length] = element;
   }
 
   // 移除並回傳 stack 頂部的元素
   pop() {
     if ((this.#items.length)==0){
-        //若 array 內無元素則回傳警示
+        // 若 array 內無元素則回傳警示
         return "The Stack is Empty."
     }else{
-         //若 array 內有元素則回先存取最後一個元素，再將其從 array 內刪除
+         // 若 array 內有元素則回先存取最後一個元素，再將其從 array 內刪除
         let rm = this.#items[this.#items.length-1];
         this.#items.splice(this.#items.length-1,1);
         // 回傳被刪除的最後一個元素
