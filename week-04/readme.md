@@ -85,7 +85,7 @@ pm2 save
 sudo nano /etc/nginx/sites-available/default
 ```         
 
-出現設定檔內容如下(已刪除多於註解)：
+出現設定檔內容如下(已刪除多餘註解)：
 ```
 server {
         listen 80 default_server;
@@ -99,12 +99,19 @@ server {
                 # 將 port:3000 上的專案導到 proxy (Nginx 管理)上，再由 proxy 提供給client
 
                 proxy_http_version 1.1;
+                # 指定Nginx在向後端伺服器發送代理請求時，使用HTTP 1.1協議
+
                 proxy_set_header Upgrade $http_upgrade;
+                # 用於升級協議
+
                 proxy_set_header Connection 'upgrade';
+                # 將Connection標頭設置為upgrade
+
                 proxy_set_header Host $host;
+                # 這一行將 Host 標頭設置為 $host 變量，該變量代表 client 請求中的 Host 值
+
                 proxy_cache_bypass $http_upgrade;
-                # First attempt to serve request as file, then
-                # as directory, then fall back to displaying a 404.
+                # 如果請求包含 Upgrade 標頭，則跳過 proxy
                 
                 try_files $uri $uri/ =404;
                 # 如果連不到就回 404
