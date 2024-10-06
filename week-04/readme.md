@@ -172,6 +172,8 @@ sudo apt install pm2
 ```
 sudo nano /etc/nginx/nginx.conf
 ```
+- nano：一個用於終端的編輯器，常見於 Linux 和 Unix 系統中，專為那些不熟悉複雜編輯器（如 vim 或 emacs）的用戶設計，提供了友好的操作介面和簡單的快捷鍵操作（但是我還是覺得有點難用><）。            
+（註：在修改 nginx/sites-available/default 檔案時曾有想用 FileZilla 下載文字檔修改再丟回去，但是一樣遇到權限問題，一定要使用 sudo command 修改 0.0）                          
 
 3. 重啟系統服務（如：Nginx）
 ```
@@ -183,7 +185,7 @@ sudo systemctl restart nginx
 sudo 是代為執行高權限任務， su 後面通常會接 root ，直接切換到管理員。
         
 
-## 9. Nginx 的 Log 檔案在哪裡？你怎麼找到的？怎麼看 Nginx 的 Log？      
+## 9. 關於 Nginx 的 Log 檔               
 ### Log 檔路徑  
 1. 訪問日誌             
 ```
@@ -298,4 +300,20 @@ server {
 網址：https://docs.aws.amazon.com/zh_tw/vpc/latest/userguide/security-group-rules.html
 
 
-         
+
+## 12. Linux 環境               
+| 檔案夾         |功用及內容                   |
+|:--------------|:---------------------|
+|/etc|系統配置：例如網路設置（/etc/network/interfaces），時間和區域設置（/etc/timezone）                服務器設置（如 /etc/ssh/sshd_config）                          
+服務配置：如 Nginx、Apache、MySQL 的配置文件            
+系統初始化腳本：一些自動啟動的服務腳本，位於 /etc/init.d/ 或 /etc/systemd/              
+用戶和群組信息：如 /etc/passwd、/etc/group|
+|/var|日誌文件：如 /var/log/，這裡存放系統和應用的日誌文件（如 Nginx 的日誌）           
+暫存數據：如 /var/tmp/，用來存放系統運行時的臨時文件                    
+郵件和郵件隊列：如 /var/mail/，存放系統郵件                  
+數據庫：某些服務的動態數據存放在 /var/lib/，如 MySQL 的數據庫文件可能存放在 /var/lib/mysql          
+ PID 文件：如 /var/run/ 用來存放系統服務的進程 ID（PID）文件            |
+|/boot|啟動載入器文件：如 grub，常見的啟動載入器配置文件位於 /boot/grub/                
+內核映像：如 vmlinuz，是已壓縮的 Linux 內核文件，操作系統啟動時會用到                       
+初始化內存映像（initrd 或 initramfs）：在內核加載之後用來初始化硬體和驅動器的虛擬文件系統               
+系統映像：開機時用來檢查硬件並加載驅動              |
