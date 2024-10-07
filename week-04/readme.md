@@ -31,9 +31,9 @@ Nginx 是一款開源的網路伺服器，能夠用於多種網路服務，最�
 | 配置和管理| 配置文件簡潔直觀（與 Apache 相比） |        
 | 模塊和靈活性| 提供 module 功能，但必須在 compile 的時候就載入，無法動態載入|               
 | 對 PHP 的支援| Nginx 可以通過 FastCGI 來處理 PHP，但需自行配置 |  
-|反向代理| Client 與 Server 不需知道彼此真實位址，僅需要透過 Nginx 反向代理即可達成請求   ![反向代理](../assets/week-04/img/反向代理.png)    圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|   
-|負載均衡 |Nginx 能夠自動的將 Request 分送到不同 Server 上，而分送的演算法可以自己設計，最常使用的是 RR  ![負載均衡](../assets/week-04/img/負載平衡.png)       圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|  
-|HTTP 快取|Nginx 會利用 http 快取的機制做優化，提高效能 ![Http 快取](../assets/week-04/img/Http快取.png)    圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|
+|反向代理| Client 與 Server 不需知道彼此真實位址，僅需要透過 Nginx 反向代理即可達成請求   ![反向代理](../assets/week-04/img/反向代理。png)    圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|   
+|負載均衡 |Nginx 能夠自動的將 Request 分送到不同 Server 上，而分送的演算法可以自己設計，最常使用的是 RR  ![負載均衡](../assets/week-04/img/負載平衡。png)       圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|  
+|HTTP 快取|Nginx 會利用 http 快取的機制做優化，提高效能 ![Http 快取](../assets/week-04/img/Http 快取。png)    圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|
 
 補充：              
 事件驅動架構（EDA）: 一種軟體架構模式，其中系統的行為主要是對發生的事件做出反應，在事件驅動架構中，系統的各個元件彼此之間通過發送和接收事件來進行溝通和協作，而不是直接互相調用；事件驅動架構通常包含三個主要元件：生產者（Producer）、事件代理（Event Broker）和訂閱者（Subscriber）。             
@@ -76,14 +76,14 @@ pm2 save
  一般指代理伺服器，允許 server 端與 client 端進行非直接的連接，Gateway、Router 等網路裝置就具備此功能； proxy 有利於保障網路終端的隱私或安全，在一定程度上能夠阻止網路攻擊。
 
 ###  透過 Nginx 來 代理 Express 專案        
-在前面有提到，Nginx 可以實現反向代理（參3. 什麼是 Nginx？有哪些用途與特性？），因此可達到下列好處：         
+在前面有提到，Nginx 可以實現反向代理（參 3. 什麼是 Nginx？有哪些用途與特性？），因此可達到下列好處：         
 
 1. Load balance： Reverse Proxy 可以分配 server 去處理請求，控制流量       
 2. Caching：暫存加快需求處理            
 3. 彈性高：若要新增功能、需求，或是改變 port，只要將 server 端連上 proxy 即可
 
 補充：正向代理與反向代理
-- 反向代理（Reverse proxy）是 proxy 的一種，根據 client 的請求從 proxy server 上取得資源，然後再將這些資源返回給 client；而正向代理（Forward Proxy）則是作為一個中繼，將 server 資源傳給眾多 client，server不知道發請求的 client 是哪一個。        
+- 反向代理（Reverse proxy）是 proxy 的一種，根據 client 的請求從 proxy server 上取得資源，然後再將這些資源返回給 client；而正向代理（Forward Proxy）則是作為一個中繼，將 server 資源傳給眾多 client，server 不知道發請求的 client 是哪一個。        
 
 - 反向代理是在 server 端作為代理使用，而不是 client 端，client 端通過正向代理可以存取很多不同的資源，而反向代理是眾多 client 都通過它存取不同後端伺服器上的資源，而不需要知道這些後端伺服器的存在，就像所有資源都來自於這個 Reverse proxy Server，client 不知道背後服務的 server 是誰。             
 
@@ -93,7 +93,6 @@ pm2 save
 ![reverseProxy](../assets/week-04/img/reverse-proxy.png)  
 圖片來源：https://www.jyt0532.com/2019/11/18/proxy-reverse-proxy/
 
-
 ## 6. 在 readme 中提供步驟 9 的 Nginx 設定檔    
 
 輸入以下指令：
@@ -101,7 +100,7 @@ pm2 save
 sudo nano /etc/nginx/sites-available/default
 ```         
 
-出現設定檔內容如下(已刪除多餘註解)：
+出現設定檔內容如下（已刪除多餘註解）：
 ```
 server {
         listen 80 default_server;
@@ -112,16 +111,16 @@ server {
 
         location / {
                 proxy_pass http://localhost:3000;
-                # 將 port:3000 上的專案導到 proxy (Nginx 管理)上，再由 proxy 提供給client
+                # 將 port:3000 上的專案導到 proxy (Nginx 管理）上，再由 proxy 提供給 client
 
                 proxy_http_version 1.1;
-                # 指定Nginx在向後端伺服器發送代理請求時，使用HTTP 1.1協議
+                # 指定 Nginx 在向後端伺服器發送代理請求時，使用 HTTP 1.1 協議
 
                 proxy_set_header Upgrade $http_upgrade;
                 # 用於升級協議
 
                 proxy_set_header Connection 'upgrade';
-                # 將Connection標頭設置為upgrade
+                # 將 Connection 標頭設置為 upgrade
 
                 proxy_set_header Host $host;
                 # 這一行將 Host 標頭設置為 $host 變量，該變量代表 client 請求中的 Host 值
@@ -135,24 +134,22 @@ server {
 
 ```
 
-
 ## 7. Security Group 是什麼？用途為何？有什麼設定原則嗎？       
 ### Security Group 用途         
-Security Group 主要用途是設定伺服器的連線方式，如一個虛擬防火牆，控制允許取用和離開 instance 的流量，Security Group 可以單獨設定規則如：特定 IP、port 號和 protocal 類別，設定完成後供 instance 取用。       
+Security Group 主要用途是設定伺服器的連線方式，如一個虛擬防火牆，控制允許取用和離開 instance 的權限，Security Group 可以單獨設定規則如：特定 IP、port 號和 protocal 類別，設定完成後供 instance 取用。       
 
 ### 相關設定原則      
 1. 只定義允許的規則：Security Group 只允許指定的流量，任何未被允許的流量都會被默認拒絕。            
 2. 默認拒絕一切流量：除非明確允許，否則所有入站出站流量都會被拒絕。               
-3. Principle of Least Privilege：只允許必要的端口和IP範圍，**避免允許0.0.0.0/0**。                      
+3. Principle of Least Privilege：只允許必要的端口和 IP 範圍，**避免允許 0.0.0.0/0**。                      
 4. 進出流量分開設置： 應根據應用的需求設置不同的入站和出站規則。
 5. 定期審查和更新規則。         
 6. 不同使用案例的安全群組規則也不同，可參考 aws 官網            
 https://docs.aws.amazon.com/zh_tw/AWSEC2/latest/UserGuide/security-group-rules-reference.html#sg-rules-web-server
 
-
 ## 8. 關於 sudo         
 ### 何為 sudo？
-Super User DO，是 Unix / Linux 平臺上的一個工具，如果在終端輸入一個命令前加上 sudo 系統就能讓一般用戶執行一些只有系統管理員或其他特定帳號才能完成的任務，例如：執行 mount, halt, su 這類的指令，或者編輯系統設定檔 (如：.conf 等)，如此減少了 root 使用者的登錄次數和管理時間，也提高系統安全性，sudo 指令特性如下：            
+Super User DO，是 Unix / Linux 平臺上的一個工具，如果在終端輸入一個命令前加上 sudo 系統就能讓一般用戶執行一些只有系統管理員或其他特定帳號才能完成的任務，例如：執行 mount, halt, su 這類的指令，或者編輯系統設定檔 （如：.conf 等），如此減少了 root 使用者的登錄次數和管理時間，也提高系統安全性，sudo 指令特性如下：            
 
 | **特性** | **說明** |  
 |------------------------|----------|  
@@ -215,10 +212,10 @@ sudo cat /var/log/nginx/error.log
 
 ```
 35.94.217.216 - - [05/Oct/2024:09:01:50 +0000] "GET / HTTP/1.1" 200 409 
-#為訪問的 IP   - - [時間] "Method / 連線方式與version"  Http 狀態碼 回應字節數
+#為訪問的 IP   - - [時間] "Method / 連線方式與 version"  Http 狀態碼 回應字節數
 
 "-" "Mozilla/5.0 (Linux; U; Android 2.3.3; ko-kr; SHW-M250S Build/GINGERBREAD) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
-# 發起請求的客戶端信息（OS ,設備, broswer）
+# 發起請求的客戶端信息（OS , 設備，broswer）
 ```
 
 ## 10. 問題補充             
@@ -267,9 +264,7 @@ server {
 ```
 但是這樣是不是要設定很多個 port ?       
 如果還是 miss 掉怎麼辦 0.0          
-目前只想到這裡...                       
-
-
+目前只想到這裡。..                       
 
 ## 11. 參考資料           
 1. 在 Ubuntu 22.04 安裝 Nginx 網頁伺服器，並架設多個網站（多網域）              
@@ -299,13 +294,10 @@ server {
 10. AWS 官網            
 網址：https://docs.aws.amazon.com/zh_tw/vpc/latest/userguide/security-group-rules.html
 
-
-
 ## 12. Linux 環境             
 -  /etc：系統配置、服務配置、系統初始化腳本、用戶和群組信息   
 -  /var：日誌文件、郵件、數據庫、PID 文件        
 -  /boot：啟動載入器文件、開機時會用到的內核映像、初始化內存映像             
-
 
 - $PATH 環境變數         
 一個包含多個目錄的列表，用以簡化命令執行，只需要輸入命令名，系統就會自動在 $PATH 中的目錄中查找該命令並執行。              
