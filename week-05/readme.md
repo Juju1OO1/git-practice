@@ -1,6 +1,8 @@
 ## 1. 網址       
-https://papperhelper.xyz
-https://zy.papperhelper.xyz/           
+https://papperhelper.xyz                
+https://zy.papperhelper.xyz/        
+
+註：設定子網域直接設 A record 就好，不要設 forward，不然憑證會失效                                 
 
 
 ## 2. 網域購買           
