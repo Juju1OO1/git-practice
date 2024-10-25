@@ -1,5 +1,6 @@
 ## 1. 網址       
-https://zy.papperhelper.xyz           
+https://papperhelper.xyz
+https://zy.papperhelper.xyz/           
 
 
 ## 2. 網域購買           
