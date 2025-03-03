@@ -33,7 +33,7 @@ Nginx 是一款開源的網路伺服器，能夠用於多種網路服務，最�
 | 對 PHP 的支援| Nginx 可以通過 FastCGI 來處理 PHP，但需自行配置 |  
 |反向代理| Client 與 Server 不需知道彼此真實位址，僅需要透過 Nginx 反向代理即可達成請求   ![反向代理](../assets/week-04/img/reverse_proxy.png)    圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|   
 |負載均衡 |Nginx 能夠自動的將 Request 分送到不同 Server 上，而分送的演算法可以自己設計，最常使用的是 RR  ![負載均衡](../assets/week-04/img/loadBalance.png)       圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|  
-|HTTP 快取|Nginx 會利用 http 快取的機制做優化，提高效能 ![Http 快取](../assets/week-04/img/Http 快取。png)    圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|
+|HTTP 快取|Nginx 會利用 http 快取的機制做優化，提高效能 ![Http快取](../assets/week-04/img/Http快取.png)    圖片來源：https://www.explainthis.io/zh-hant/swe/why-nginx|
 
 補充：              
 事件驅動架構（EDA）: 一種軟體架構模式，其中系統的行為主要是對發生的事件做出反應，在事件驅動架構中，系統的各個元件彼此之間通過發送和接收事件來進行溝通和協作，而不是直接互相調用；事件驅動架構通常包含三個主要元件：生產者（Producer）、事件代理（Event Broker）和訂閱者（Subscriber）。             
